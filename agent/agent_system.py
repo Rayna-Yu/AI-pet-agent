@@ -43,15 +43,11 @@ class ReActAgent:
     def run(self, user_query: str) -> Dict[str, Any]:
         self.trajectory.clear()
         for step_idx in range(self.config.max_steps):
-            # ====== TODO ======
             # 1. At each step, format the prompt based on the make_prompt function and self.trajectory
-            prompt = None
-            # ====== TODO ======
+            prompt = make_prompt(user_query, [asdict(s) for s in self.trajectory])
 
-            # ====== TODO ======
             # 2. Use self.llm to process the prompt
-            out = None
-            # ====== TODO ======
+            out = self.llm(prompt)
 
             # Expect two lines: Thought:..., Action:...
             t_match = re.search(r"Thought:\s*(.*)", out)
@@ -60,10 +56,9 @@ class ReActAgent:
             action_line = a_match.group(1).strip() if a_match else "finish[answer=\"(no action)\"]"
             action_line = "Action: " + action_line
 
-            # ====== TODO ======
+
             # 3. Parse the action of the action line using the parse_action function
-            parsed = None
-            # ====== TODO ======
+            parsed = parse_action(action_line)
 
             if not parsed:
                 observation = "Invalid action format. Stopping."
