@@ -1,0 +1,804 @@
+{
+  "data": [
+    {
+      "id": "2001",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Luna",
+        "animalSpecies": "Cat",
+        "animalBreed": "Calico",
+        "animalAgeString": "Young",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Sweet, cuddly calico who loves laps and quiet naps.",
+        "animalLocation": "Boston, MA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/luna.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2002",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Milo",
+        "animalSpecies": "Dog",
+        "animalBreed": "Beagle",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Friendly beagle who enjoys long walks and sniffing everything.",
+        "animalLocation": "Cambridge, MA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/milo.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2003",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Bella",
+        "animalSpecies": "Cat",
+        "animalBreed": "Maine Coon",
+        "animalAgeString": "Senior",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Gentle senior cat who loves brushing and quiet spaces.",
+        "animalLocation": "Somerville, MA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/bella.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2004",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Oliver",
+        "animalSpecies": "Dog",
+        "animalBreed": "Golden Retriever",
+        "animalAgeString": "Young",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Playful, high-energy golden who loves fetch and people.",
+        "animalLocation": "Providence, RI",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/oliver.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2005",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Coco",
+        "animalSpecies": "Rabbit",
+        "animalBreed": "Holland Lop",
+        "animalAgeString": "Baby",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Small, shy bunny who warms up with treats.",
+        "animalLocation": "New York, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/coco.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2006",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Rocky",
+        "animalSpecies": "Dog",
+        "animalBreed": "Pit Bull Terrier",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Energetic and loyal; loves toys and needs an active home.",
+        "animalLocation": "Boston, MA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/rocky.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2007",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Hazel",
+        "animalSpecies": "Cat",
+        "animalBreed": "Tabby",
+        "animalAgeString": "Adult",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Calm tabby who enjoys window watching and sunny naps.",
+        "animalLocation": "Brooklyn, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/hazel.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2008",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Freckles",
+        "animalSpecies": "Dog",
+        "animalBreed": "Dalmatian",
+        "animalAgeString": "Young",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "High-energy and very playful, loves running and attention.",
+        "animalLocation": "Jersey City, NJ",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/freckles.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2009",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Shadow",
+        "animalSpecies": "Cat",
+        "animalBreed": "Domestic Shorthair",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Quiet and affectionate; loves being near people.",
+        "animalLocation": "Hartford, CT",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/shadow.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2010",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Penny",
+        "animalSpecies": "Dog",
+        "animalBreed": "Corgi",
+        "animalAgeString": "Senior",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Senior corgi who loves cuddles, short walks, and snacks.",
+        "animalLocation": "Albany, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/penny.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2011",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Simba",
+        "animalSpecies": "Cat",
+        "animalBreed": "Tabby",
+        "animalAgeString": "Young",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Curious kitten who enjoys exploring every corner.",
+        "animalLocation": "Rochester, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/simba.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2012",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Sadie",
+        "animalSpecies": "Dog",
+        "animalBreed": "Poodle",
+        "animalAgeString": "Senior",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Gentle, intelligent, with a calm and friendly disposition.",
+        "animalLocation": "Poughkeepsie, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/sadie.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2013",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Oscar",
+        "animalSpecies": "Cat",
+        "animalBreed": "Bengal",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Very active and loves climbing; playful and vocal.",
+        "animalLocation": "Buffalo, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/oscar.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2014",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Toby",
+        "animalSpecies": "Dog",
+        "animalBreed": "Boxer",
+        "animalAgeString": "Young",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Bouncy, energetic, and always ready to play fetch.",
+        "animalLocation": "Albany, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/toby.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2015",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Chloe",
+        "animalSpecies": "Cat",
+        "animalBreed": "Scottish Fold",
+        "animalAgeString": "Adult",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Gentle and affectionate, enjoys quiet cuddles.",
+        "animalLocation": "Syracuse, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/chloe.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2016",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Cooper",
+        "animalSpecies": "Dog",
+        "animalBreed": "Cocker Spaniel",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Sweet-natured and calm; loves gentle walks and being around people.",
+        "animalLocation": "Albany, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/cooper.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2017",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Nala",
+        "animalSpecies": "Cat",
+        "animalBreed": "Sphynx",
+        "animalAgeString": "Young",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Playful and affectionate; loves warmth and human attention.",
+        "animalLocation": "Rochester, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/nala.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2018",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Leo",
+        "animalSpecies": "Dog",
+        "animalBreed": "Shih Tzu",
+        "animalAgeString": "Senior",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Calm, fluffy, and loves lounging on soft cushions.",
+        "animalLocation": "Buffalo, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/leo.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2019",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Sophie",
+        "animalSpecies": "Cat",
+        "animalBreed": "Birman",
+        "animalAgeString": "Adult",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Soft and gentle, loves being petted and brushed.",
+        "animalLocation": "Syracuse, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/sophie.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2020",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Zeus",
+        "animalSpecies": "Dog",
+        "animalBreed": "Rottweiler",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Strong, loyal, protective but gentle with family.",
+        "animalLocation": "Buffalo, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/zeus.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2021",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Mittens",
+        "animalSpecies": "Cat",
+        "animalBreed": "Russian Blue",
+        "animalAgeString": "Young",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Quiet and shy, but affectionate once she warms up.",
+        "animalLocation": "Rochester, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/mittens.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2022",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Buster",
+        "animalSpecies": "Dog",
+        "animalBreed": "Dalmatian",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Loves to run, very energetic and playful.",
+        "animalLocation": "Syracuse, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/buster.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2023",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Ginger",
+        "animalSpecies": "Cat",
+        "animalBreed": "American Shorthair",
+        "animalAgeString": "Adult",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Friendly, social, enjoys playtime and lap time.",
+        "animalLocation": "Albany, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/ginger.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2024",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Riley",
+        "animalSpecies": "Dog",
+        "animalBreed": "Australian Shepherd",
+        "animalAgeString": "Young",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Very smart and active, loves games and mental challenges.",
+        "animalLocation": "Boston, MA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/riley.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2025",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Pumpkin",
+        "animalSpecies": "Cat",
+        "animalBreed": "Domestic Shorthair",
+        "animalAgeString": "Young",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Playful and affectionate; enjoys toys and cuddling.",
+        "animalLocation": "Cambridge, MA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/pumpkin.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2026",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Zephyr",
+        "animalSpecies": "Bird",
+        "animalBreed": "Parakeet",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Cheerful and chatty; loves to sing in the morning.",
+        "animalLocation": "Philadelphia, PA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/zephyr.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2027",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Willow",
+        "animalSpecies": "Cat",
+        "animalBreed": "Abyssinian",
+        "animalAgeString": "Adult",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Curious and intelligent; loves to climb and explore.",
+        "animalLocation": "Brooklyn, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/willow.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2028",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Shadowfax",
+        "animalSpecies": "Horse",
+        "animalBreed": "Arabian",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Majestic and calm; trained and gentle with people.",
+        "animalLocation": "Saratoga Springs, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/shadowfax.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2029",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Misty",
+        "animalSpecies": "Cat",
+        "animalBreed": "Himalayan",
+        "animalAgeString": "Senior",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Soft and fluffy, enjoys gentle petting and quiet corners.",
+        "animalLocation": "Albany, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/misty.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2030",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Buddy",
+        "animalSpecies": "Dog",
+        "animalBreed": "Jack Russell Terrier",
+        "animalAgeString": "Young",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Energetic little dog with a big personality; loves running.",
+        "animalLocation": "Rochester, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/buddy.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2031",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Coco Jr.",
+        "animalSpecies": "Rabbit",
+        "animalBreed": "Netherland Dwarf",
+        "animalAgeString": "Young",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Tiny and curious; hops around and loves to explore.",
+        "animalLocation": "Boston, MA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/cocojr.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2032",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Fiona",
+        "animalSpecies": "Cat",
+        "animalBreed": "Norwegian Forest",
+        "animalAgeString": "Young",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Playful and loves high places; enjoys exploring tall cat trees.",
+        "animalLocation": "Philadelphia, PA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/fiona.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2033",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Hunter",
+        "animalSpecies": "Dog",
+        "animalBreed": "Cavalier King Charles Spaniel",
+        "animalAgeString": "Senior",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Sweet and laid-back; enjoys cuddles and short walks.",
+        "animalLocation": "Albany, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/hunter.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2034",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Sassy",
+        "animalSpecies": "Cat",
+        "animalBreed": "Turkish Van",
+        "animalAgeString": "Adult",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Energetic and curious; loves water and jumping around.",
+        "animalLocation": "Newark, NJ",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/sassy.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2035",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Moose",
+        "animalSpecies": "Dog",
+        "animalBreed": "Saint Bernard",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Gentle giant; calm and loves children.",
+        "animalLocation": "Buffalo, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/moose.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2036",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Penny Jr.",
+        "animalSpecies": "Cat",
+        "animalBreed": "Ocicat",
+        "animalAgeString": "Young",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Playful, social, curious; loves to play with toys.",
+        "animalLocation": "Brooklyn, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/pennyjr.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2037",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Thor",
+        "animalSpecies": "Dog",
+        "animalBreed": "Alaskan Malamute",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Strong, rugged, loves long walks and cold weather.",
+        "animalLocation": "Rochester, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/thor.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2038",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Daisy",
+        "animalSpecies": "Cat",
+        "animalBreed": "Havana Brown",
+        "animalAgeString": "Adult",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Affectionate and playful, enjoys company and gentle play.",
+        "animalLocation": "Philadelphia, PA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/daisy.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2039",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Jack",
+        "animalSpecies": "Dog",
+        "animalBreed": "Border Collie",
+        "animalAgeString": "Young",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Smart and energetic; loves to run and learn tricks.",
+        "animalLocation": "Boston, MA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/jack.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2040",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Ruby",
+        "animalSpecies": "Cat",
+        "animalBreed": "Exotic Shorthair",
+        "animalAgeString": "Adult",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Cuddly and calm, enjoys lounging in sunny spots.",
+        "animalLocation": "Providence, RI",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/ruby.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2041",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Zephyr Jr.",
+        "animalSpecies": "Bird",
+        "animalBreed": "Lovebird",
+        "animalAgeString": "Young",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Affectionate little bird, loves to chirp and sit on shoulders.",
+        "animalLocation": "New York, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/zephyrjr.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2042",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Maggie",
+        "animalSpecies": "Cat",
+        "animalBreed": "Manx",
+        "animalAgeString": "Young",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Playful and active, loves toy mice.",
+        "animalLocation": "Albany, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/maggie.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2043",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Bruno",
+        "animalSpecies": "Dog",
+        "animalBreed": "Doberman",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Loyal, energetic, and protective. Needs consistent training.",
+        "animalLocation": "Buffalo, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/bruno.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2044",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Callie",
+        "animalSpecies": "Cat",
+        "animalBreed": "Burmese",
+        "animalAgeString": "Senior",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Quiet, thoughtful, enjoys sunbeams and soft blankets.",
+        "animalLocation": "Philadelphia, PA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/callie.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2045",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Ella",
+        "animalSpecies": "Cat",
+        "animalBreed": "Scottish Straight",
+        "animalAgeString": "Young",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Affectionate, social, and loves to explore new places.",
+        "animalLocation": "Syracuse, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/ella.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2046",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Rex",
+        "animalSpecies": "Dog",
+        "animalBreed": "Great Pyrenees",
+        "animalAgeString": "Senior",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Calm, gentle giant with a protective heart.",
+        "animalLocation": "Rochester, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/rex.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2047",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Sasha",
+        "animalSpecies": "Cat",
+        "animalBreed": "Devon Rex",
+        "animalAgeString": "Adult",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Playful, curious, and loves to cuddle in laps.",
+        "animalLocation": "Newark, NJ",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/sasha.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2048",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Hopper",
+        "animalSpecies": "Rabbit",
+        "animalBreed": "Mini Rex",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Soft fur, gentle temperament, likes to hop around its pen.",
+        "animalLocation": "Boston, MA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/hopper.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2049",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Pepper",
+        "animalSpecies": "Guinea Pig",
+        "animalBreed": "American",
+        "animalAgeString": "Young",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Very social and chatty, enjoys being held gently.",
+        "animalLocation": "Philadelphia, PA",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/pepper.jpg" }
+        ]
+      }
+    },
+    {
+      "id": "2050",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Ragnar",
+        "animalSpecies": "Dog",
+        "animalBreed": "German Shepherd",
+        "animalAgeString": "Adult",
+        "animalSex": "Male",
+        "animalDescriptionPlain": "Intelligent and protective; great for active families.",
+        "animalLocation": "Brooklyn, NY",
+        "animalPictures": [
+          { "urlSecureFullsize": "https://example.com/ragnar.jpg" }
+        ]
+      }
+    }
+  ]
+}
