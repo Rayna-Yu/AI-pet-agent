@@ -44,37 +44,21 @@ def split_args(argstr: str) -> Dict[str, Any]:
             args[field] = True
     return args
 # ====== Helper functions ======
-
-# We will write a parser that converts a string of actions to arguments
-#       For example, a languge model would ouptut actions in the following form:
-#       'Action: search[query="starry night", k=3]'
-#       'Action: finish[answer="Vincent van Gogh, at Saint-Rémy-de-Provence."]'
-#
-#       We will need a function to parse them into a function call to external tools
-#
-#       Let's implement the key function for this task
 def parse_action(line: str) -> Optional[Tuple[str, Dict[str, Any]]]:
-    """
-    Parse lines like:
-      Action: search[query="van gogh starry night", k=3]
-      Action: finish[answer="Vincent van Gogh."]
-    Returns (action_name, args_dict) or None on invalid input.
-    """
-    # ====== TODO ======
-    #     Use the parse_args function above to write a function that converts an action string to a function call
-    #     Return the name of the function and the args
     name = None; args = None
 
-    # 1) Must start with 'Action:'
+    line = line.strip()
+    if not line.startswith("Action:"):
+        return None
     
-    # 2) Extract action name up to the first '['
-    #    name must be non-empty and composed of letters/underscores (basic check)
+    rest = line[len("Action:"):].strip()
+
+    match = re.match(r"^([a-zA-Z_][a-zA-Z0-9_]*)\s*\[(.*)\]\s*$", rest)
+    if not match:
+        return None
     
-    # 3) Inside brackets: key=value pairs separated by commas (quotes allowed)
-    
-    # 4) Allow trailing whitespace after closing bracket only
-    
-    # ====== TODO ======
+    name, argstr = match.groups()
+    args = split_args(argstr)
     return name, args
 
 
@@ -95,15 +79,22 @@ def format_history(trajectory: List[Dict[str, str]]) -> str:
 
 # 3. We will build the prompt shown to the model for the next step
 SYSTEM_PREAMBLE = textwrap.dedent("""\
-    You are a helpful ReAct agent. You may use tools to answer factual questions.
+    You are a helpful ReAct agent that helps users find adoptable pets.
+    You can use tools to search for pets based on their description, breed, age, species, location, and other attributes.
 
     Available tools:
-    - search[query="<text>", k=<int>]  # searches a small encyclopedia and returns top-k results
+    - search[query="<text>", k=<int>]  # searches the pet data base and returns the top-k matching animals
     To finish, use: finish[answer="<final answer>"]
 
     Follow the exact step format:
     Thought: <your reasoning>
     Action: <one of the tool calls above, or finish[...]>
+
+    Example:
+    User Question: "I want a calico cat who is young and cuddly"
+    Thought: I should identify the species, breed, and age preference from the query before searching.
+    Action: search[query="calico cat young cuddly", k=3]
+    Observation: {"results":[...]}
 """).strip()
 
 def make_prompt(user_query: str, trajectory: List[Dict[str, str]]) -> str:

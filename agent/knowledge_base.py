@@ -50,7 +50,7 @@ def normalize_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
     return normalized
 
 # Load your file here
-with open("toy_corpus.json", "r") as f:
+with open("agent/toy_corpus.json", "r") as f:
     raw_json = json.load(f)
 
 # RescueGroups wraps results in "data": [...]

@@ -1,22 +1,9 @@
-# Step 4: Integrating Components into an Agent System
-
-# Finally, we will put everything together as an agent system, including the external database, the information search tools, and a base language model.
-
-# The agent will take the input and use a language model to output the Thought and Action.
-# The agent will execute the Action (which in this case is searching for a document) and concatenate the returned document as Observation to the next round of the prompt
-# The agent will iterate over the above two steps until it identifies the answer or reaches an iteration limit.
-
-# ----------------------------
-# We will define the agent controller that combines everything we define above
-# ----------------------------
 from dataclasses import dataclass, field, asdict
 from typing import Callable, Dict, List, Tuple, Optional, Any
 import json, math, re, textwrap, random, os, sys
 import math
 from collections import Counter, defaultdict
 
-# import python files from the same folder, such as language_model.py, knowledge_base.py, prompting_techniques.py
-# Add the current directory to sys.path to ensure imports work
 current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(current_dir)
 from prompting_techniques import make_prompt, parse_action
