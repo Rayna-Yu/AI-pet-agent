@@ -1,16 +1,16 @@
 # AI-pet-agent
 An AI agent to help prospective pet owners with their pet adoption search.
 
-# Old Problem statement
+## Old Problem statement
 
-# Data
+## Data
 
-# New Problem statement
+## New Problem statement
 
-# Methodologies
+## Methodologies
 
-# Results
+## Results
 
-# Further work and improvements
+## Further work and improvements
 
-# Run the code and test out the agent
+## Run the code and test out the agent
