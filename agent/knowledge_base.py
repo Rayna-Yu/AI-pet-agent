@@ -5,8 +5,6 @@ import json, math, re, textwrap, random, os, sys
 from collections import Counter, defaultdict
 
 def normalize_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
-    """Flatten RescueGroups API response and create a searchable text blob."""
-    
     attr = entry.get("attributes", {})
 
     name = attr.get("animalName", "")
@@ -63,12 +61,11 @@ CORPUS = [normalize_entry(e) for e in raw_list]
 def tokenize(text: str) -> List[str]:
     return re.findall(r"[a-zA-Z0-9']+", text.lower())
 
-# et all the words of each document in the corpus
+# Get all the words of each document in the corpus
 DOC_TOKENS = [tokenize(d["title"] + " " + d["text"]) for d in CORPUS]
 
 # Get all the words from the corpus
 VOCAB = sorted(set(t for doc in DOC_TOKENS for t in doc))
-
 
 # Compute term frequency (TF) for each doc
 def compute_tf(tokens: List[str]) -> Dict[str, float]:
@@ -80,8 +77,6 @@ def compute_tf(tokens: List[str]) -> Dict[str, float]:
     length = max(1, len(tokens))
     
     return {token: counts[token] / length for token in counts}
-
-
 
 # Compute the document frequency across corpus: how many docs does a word appear?
 def compute_df(doc_tokens: List[List[str]]) -> Dict[str, float]:

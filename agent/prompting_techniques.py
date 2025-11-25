@@ -26,10 +26,6 @@ def convert_value(raw: str) -> Any:
         return raw.strip('"').strip("'")
 
 def split_args(argstr: str) -> Dict[str, Any]:
-    """
-    This function splits the string such as 'k=3, query="starry night"' into a dictionary {'k':3, 'query':'starry night'},
-    Note: relies on double quotes to protect commas inside strings.
-    """
     args: Dict[str, Any] = {}
     row = next(csv.reader(io.StringIO(argstr), delimiter=",", skipinitialspace=True, quotechar='"'), [])
     for field in row:
@@ -43,6 +39,7 @@ def split_args(argstr: str) -> Dict[str, Any]:
             # bare flag -> True
             args[field] = True
     return args
+
 # ====== Helper functions ======
 def parse_action(line: str) -> Optional[Tuple[str, Dict[str, Any]]]:
     name = None; args = None
@@ -60,8 +57,6 @@ def parse_action(line: str) -> Optional[Tuple[str, Dict[str, Any]]]:
     name, argstr = match.groups()
     args = split_args(argstr)
     return name, args
-
-
 
 # 2. We write a function that turn past steps into a readable history block for the prompt
 def format_history(trajectory: List[Dict[str, str]]) -> str:
@@ -81,6 +76,7 @@ def format_history(trajectory: List[Dict[str, str]]) -> str:
 SYSTEM_PREAMBLE = textwrap.dedent("""\
     You are a helpful ReAct agent that helps users find adoptable pets.
     You can use tools to search for pets based on their description, breed, age, species, location, and other attributes.
+    Prioritize returning accurate and relevant information to the user.
 
     Available tools:
     - search[query="<text>", k=<int>]  # searches the pet data base and returns the top-k matching animals
@@ -89,22 +85,15 @@ SYSTEM_PREAMBLE = textwrap.dedent("""\
     Follow the exact step format:
     Thought: <your reasoning>
     Action: <one of the tool calls above, or finish[...]>
-
+    
     Example:
     User Question: "I want a calico cat who is young and cuddly"
-    Thought: I should identify the species, breed, and age preference from the query before searching.
+    Thought: I should identify the species, breed, age, and personality preferences from the query before searching.
     Action: search[query="calico cat young cuddly", k=3]
     Observation: {"results":[...]}
 """).strip()
 
 def make_prompt(user_query: str, trajectory: List[Dict[str, str]]) -> str:
-    """
-    Construct the model prompt by concatenating:
-      (1) a clear system preamble with the tool contract,
-      (2) the user question,
-      (3) the formatted history so far,
-      (4) a cue to produce the next Thought.
-    """
     history_block = format_history(trajectory)
     return (
         f"{SYSTEM_PREAMBLE}\n\n"
