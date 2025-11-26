@@ -88,7 +88,7 @@ SYSTEM_PREAMBLE = textwrap.dedent("""\
     
     Example:
     User Question: "I want a calico cat who is young and cuddly"
-    Thought: I should identify the species, breed, age, and personality preferences from the query before searching.
+    Thought: I should identify the species, breed, age, location, and personality preferences from the query before searching.
     Action: search[query="calico cat young cuddly", k=3]
     Observation: {"results":[...]}
 """).strip()
