@@ -10,8 +10,12 @@ The original problem that I proposed was to create an AI agent for pet owners su
 
 ### New Problem statement
 #### What is the problem?
+The new problem is creating an AI agent for prospective pet owners and easing the process of finding an available pet up for adoption that matches the person’s preferences. The goal is to allow people to prompt the agent with a query like “I want a young white cat who has a bubbly personality and loves to cuddle near Boston.” and the agent will return a list of relevant adoptable pets along with a short description and a link to their information. This problem is a better problem to tackle because it has a smaller scope of information and more structured data that can be accessed and processed.
+	This AI agent tackles the problem of finding the right pet to adopt. It is often very overwhelming when scrolling the internet for potential pets to add to your life. It is a big commitment and finding the right pet is an important step in the process to ensure the happiness and well-being of both the adopter and pet. Thus, it is important to have a place where someone could ask questions and find relevant pets and suggestions based on their preferences to help guide their search during this big and exciting moment.
 
 #### Why is this problem interesting?
+This problem is an interesting problem to tackle because it is applicable to a wide range of people and it helps support a good cause. Additionally, this problem is interesting and relevant to me as a volunteer at a local Boston animal shelter that often gets a lot of different animals coming in. It is always helpful to have a tool to allow people to find the perfect pet for them and give them background information and guidance into finding which pet is perfect for them. 
+On the more technical side, this problem is interesting to see how I can implement such an AI agent ….
 
 #### What is the proposed approach?
 
