@@ -56,7 +56,7 @@
         "animalSpecies": "Dog",
         "animalBreed": "Golden Retriever",
         "animalAgeString": "Young",
-        "animalSex": "Male",
+        "animalSex": "Female",
         "animalDescriptionPlain": "Playful, high-energy golden who loves fetch and people.",
         "animalLocation": "Providence, RI",
         "animalPictures": [
@@ -104,7 +104,7 @@
         "animalSpecies": "Cat",
         "animalBreed": "Tabby",
         "animalAgeString": "Adult",
-        "animalSex": "Female",
+        "animalSex": "Male",
         "animalDescriptionPlain": "Calm tabby who enjoys window watching and sunny naps.",
         "animalLocation": "Brooklyn, NY",
         "animalPictures": [
@@ -216,7 +216,7 @@
         "animalSpecies": "Dog",
         "animalBreed": "Boxer",
         "animalAgeString": "Young",
-        "animalSex": "Male",
+        "animalSex": "Female",
         "animalDescriptionPlain": "Bouncy, energetic, and always ready to play fetch.",
         "animalLocation": "Albany, NY",
         "animalPictures": [
@@ -232,7 +232,7 @@
         "animalSpecies": "Cat",
         "animalBreed": "Scottish Fold",
         "animalAgeString": "Adult",
-        "animalSex": "Female",
+        "animalSex": "Male",
         "animalDescriptionPlain": "Gentle and affectionate, enjoys quiet cuddles.",
         "animalLocation": "Syracuse, NY",
         "animalPictures": [
@@ -264,7 +264,7 @@
         "animalSpecies": "Cat",
         "animalBreed": "Sphynx",
         "animalAgeString": "Young",
-        "animalSex": "Female",
+        "animalSex": "Male",
         "animalDescriptionPlain": "Playful and affectionate; loves warmth and human attention.",
         "animalLocation": "Rochester, NY",
         "animalPictures": [
@@ -280,7 +280,7 @@
         "animalSpecies": "Dog",
         "animalBreed": "Shih Tzu",
         "animalAgeString": "Senior",
-        "animalSex": "Male",
+        "animalSex": "Female",
         "animalDescriptionPlain": "Calm, fluffy, and loves lounging on soft cushions.",
         "animalLocation": "Buffalo, NY",
         "animalPictures": [
@@ -360,7 +360,7 @@
         "animalSpecies": "Cat",
         "animalBreed": "American Shorthair",
         "animalAgeString": "Adult",
-        "animalSex": "Female",
+        "animalSex": "Male",
         "animalDescriptionPlain": "Friendly, social, enjoys playtime and lap time.",
         "animalLocation": "Albany, NY",
         "animalPictures": [
@@ -424,7 +424,7 @@
         "animalSpecies": "Cat",
         "animalBreed": "Abyssinian",
         "animalAgeString": "Adult",
-        "animalSex": "Female",
+        "animalSex": "Male",
         "animalDescriptionPlain": "Curious and intelligent; loves to climb and explore.",
         "animalLocation": "Brooklyn, NY",
         "animalPictures": [
@@ -472,7 +472,7 @@
         "animalSpecies": "Dog",
         "animalBreed": "Jack Russell Terrier",
         "animalAgeString": "Young",
-        "animalSex": "Male",
+        "animalSex": "Female",
         "animalDescriptionPlain": "Energetic little dog with a big personality; loves running.",
         "animalLocation": "Rochester, NY",
         "animalPictures": [
@@ -520,7 +520,7 @@
         "animalSpecies": "Dog",
         "animalBreed": "Cavalier King Charles Spaniel",
         "animalAgeString": "Senior",
-        "animalSex": "Male",
+        "animalSex": "Female",
         "animalDescriptionPlain": "Sweet and laid-back; enjoys cuddles and short walks.",
         "animalLocation": "Albany, NY",
         "animalPictures": [
@@ -536,7 +536,7 @@
         "animalSpecies": "Cat",
         "animalBreed": "Turkish Van",
         "animalAgeString": "Adult",
-        "animalSex": "Female",
+        "animalSex": "Male",
         "animalDescriptionPlain": "Energetic and curious; loves water and jumping around.",
         "animalLocation": "Newark, NJ",
         "animalPictures": [
@@ -552,7 +552,7 @@
         "animalSpecies": "Dog",
         "animalBreed": "Saint Bernard",
         "animalAgeString": "Adult",
-        "animalSex": "Male",
+        "animalSex": "Female",
         "animalDescriptionPlain": "Gentle giant; calm and loves children.",
         "animalLocation": "Buffalo, NY",
         "animalPictures": [
@@ -568,7 +568,7 @@
         "animalSpecies": "Cat",
         "animalBreed": "Ocicat",
         "animalAgeString": "Young",
-        "animalSex": "Female",
+        "animalSex": "Male",
         "animalDescriptionPlain": "Playful, social, curious; loves to play with toys.",
         "animalLocation": "Brooklyn, NY",
         "animalPictures": [
@@ -584,7 +584,7 @@
         "animalSpecies": "Dog",
         "animalBreed": "Alaskan Malamute",
         "animalAgeString": "Adult",
-        "animalSex": "Male",
+        "animalSex": "Female",
         "animalDescriptionPlain": "Strong, rugged, loves long walks and cold weather.",
         "animalLocation": "Rochester, NY",
         "animalPictures": [
@@ -616,7 +616,7 @@
         "animalSpecies": "Dog",
         "animalBreed": "Border Collie",
         "animalAgeString": "Young",
-        "animalSex": "Male",
+        "animalSex": "Female",
         "animalDescriptionPlain": "Smart and energetic; loves to run and learn tricks.",
         "animalLocation": "Boston, MA",
         "animalPictures": [
@@ -632,7 +632,7 @@
         "animalSpecies": "Cat",
         "animalBreed": "Exotic Shorthair",
         "animalAgeString": "Adult",
-        "animalSex": "Female",
+        "animalSex": "Male",
         "animalDescriptionPlain": "Cuddly and calm, enjoys lounging in sunny spots.",
         "animalLocation": "Providence, RI",
         "animalPictures": [
@@ -696,7 +696,7 @@
         "animalSpecies": "Cat",
         "animalBreed": "Burmese",
         "animalAgeString": "Senior",
-        "animalSex": "Female",
+        "animalSex": "Male",
         "animalDescriptionPlain": "Quiet, thoughtful, enjoys sunbeams and soft blankets.",
         "animalLocation": "Philadelphia, PA",
         "animalPictures": [
