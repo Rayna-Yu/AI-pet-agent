@@ -19,16 +19,44 @@ On the more technical side, this problem is interesting to see how I can impleme
 
 #### What is the proposed approach?
 
-## Data
-
-### Toy Corpus
-
-### Rescue Group API
+#### What is the ratinoal behind the approach?
 
 ## Methodologies
 
+### Overall pipeline
+
+### Algorithms and methods
+
+### Assumptions and design choices
+
+### Limitations
+
+## Experiement setup
+
+### Data
+
+#### Toy Corpus
+
+#### Rescue Group API
+
+### Implementation
+
+#### Models 
+
+#### Parameters
+
+#### Computing enviroment
+
 ## Results
 
-## Further work and improvements
+## Discussion
+
+### Comparision to existing approaches
+
+### Further work and improvements
+
+## Conclusion
+
+## References
 
 ## Run the code
