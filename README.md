@@ -41,7 +41,7 @@ I used this approach because it seemed like the best approach to create an AI ad
 6. Final answer: Once the LLM produces "finish[answer='...']", the agent returns the final reasoning trace and the model's generated recommendations.
    
 ### Assumptions and design choices
-Our current implementation is heavily dependent on getting personality information from the description. Thus, one assumption made is that the descriptions contain enough information to meaningfully correlated with the user intent. Of course, the search still works without the description, but it is not as robust. Additionally, it is currently assumed that the user querires will be relevent to pet adoption. Thus I take for granted that there will be information in the query about species, age, location, and other behavioral traits. Furthermore, as of now, because I are using a toy corpus, the data is ensured to be very consistent, thus the normalization step assums each JSON entry follows a consistent structure. Finally, I assumed that a small model is sufficient in capability to parse user intent and produce reliable tool calls.
+My current implementation is heavily dependent on getting personality information from the description. Thus, one assumption made is that the descriptions contain enough information to meaningfully correlated with the user intent. Of course, the search still works without the description, but it is not as robust. Additionally, it is currently assumed that the user querires will be relevent to pet adoption. Thus I take for granted that there will be information in the query about species, age, location, and other behavioral traits. Furthermore, as of now, because I are using a toy corpus, the data is ensured to be very consistent, thus the normalization step assums each JSON entry follows a consistent structure. Finally, I assumed that a small model is sufficient in capability to parse user intent and produce reliable tool calls.
 
 ### Limitations
 As of now, we are limited to the toy corpus which is relatively small and lacks the diversity of real-world adoption data. It is also too perfect and consistent in structure which does not reflect any practical datasets or APIs that could be integrated. Additionally, TF-IDF can not capture semantic similarity or synonyms like "cuddly" and "affectionate". An additional limitation is the limitation in the model that we used form hugging face. Qwen2.5-0.5B-Instrcut is a small model and thus it has constraints in accuracy and may misinterpret queries or fail to produce ideal reasoning steps.
@@ -107,3 +107,5 @@ Code template: https://github.com/VirtuosoResearch/CS4100_project
 Rescue Group API: https://rescuegroups.org/services/adoptable-pet-data-api/
 
 ## Run the code
+
+To run the code you can use the provided jupiter notebook. If you want, you can play around with the prompt in the last cell to test out the agent and see what it responds.
