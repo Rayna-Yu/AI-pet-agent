@@ -77,6 +77,15 @@ SYSTEM_PREAMBLE = textwrap.dedent("""\
     You are a helpful ReAct agent that helps users find adoptable pets.
     You can use tools to search for pets based on their description, breed, age, species, location, and other attributes.
     Prioritize returning accurate and relevant information to the user.
+                                  
+    Return your final answer in the formst of a list with the following fields for each pet:
+    - name
+    - species
+    - breed
+    - age
+    - location
+    - personality traits
+    - adoption link
 
     Available tools:
     - search[query="<text>", k=<int>]  # searches the pet data base and returns the top-k matching animals

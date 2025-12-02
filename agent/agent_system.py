@@ -41,7 +41,7 @@ class ReActAgent:
             a_match = re.search(r"Action:\s*(.*)", out)
             thought = t_match.group(1).strip() if t_match else "(no thought)"
             action_line = a_match.group(1).strip() if a_match else "finish[answer=\"(no action)\"]"
-            action_line = "Action: " + action_line
+            # action_line = "Action: " + action_line
 
 
             # 3. Parse the action of the action line using the parse_action function
@@ -77,7 +77,7 @@ class ReActAgent:
         final_answer = None
         for s in reversed(self.trajectory):
             if s.action.startswith("finish["):
-                m = re.search(r'answer="(.*)"', s.action)
+                m = re.search(r'answer=["\'](.*?)["\']', s.action)
                 if m:
                     final_answer = m.group(1)
                     break
