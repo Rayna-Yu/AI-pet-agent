@@ -68,7 +68,7 @@ I used google colab which provides access to a GPU.
 #### Model configuration
 Model: Qwen2.5-0.5B-Instrcut
 
-Decoding: temperature=0.3, do_sample=True
+Decoding: temperature=0.2, do_sample=True
 
 Max tokens: 160
 
@@ -77,22 +77,37 @@ Results where judged qualitatively by how well it was able to respect the specie
 
 ## Results
 
-The results of the trial runs that I ran were very promising. My first trial I prompted the agent with "I want a young, cuddly calico cat in Boston." This was the most basic query that I could provide it with simple and clear information about age, species, location, and a descriptor on personality. 
+The results of the trial runs that I ran were very promising. My first trial I prompted the agent with "I want a young, cuddly calico cat in Boston." This was the most basic query that I could provide it with simple and clear information about age, species, location, and a descriptor on personality. This query was also provided in the preamble as an example to the LLM.
 
 The resulting asnwer was: "Based on your preferences, I found the following pets: 1. Luna, a young, cuddly Calico cat in Boston. 2. Ruby, a Calico Exotic Shorthair cat in Providence, RI. 3. Jack, a Border Collie dog in Boston." 
 
 This was my first trial, thus I did not implement any filtering yet which explains why a dog was returned even though the query asks for a cat. Aside from that mistake, it seems like the agent was able to return accurate and reasonable results. The first pet was an exact match to the query: a young, cuddly, calico cat in boston. The second pet is a cat and a very close match in description ("Cuddly and calm, enjoys lounging in sunny spots."), matching cuddly exactly, and location, but not a match in age or breed. The third pet however, was a bad response because the agent returned a dog when I explicitly asked for a cat.
 
-After adding some filtering for species, age, and location I asked it the same question and got the answer:
+After adding some filtering for species, age, and location and additional formatting guides for the output I asked it the same question and got the answer: 
 
-I additionally prompted the agent with more complex and ambigious queries such as ... 
+Next, I prompted it with a query not provided in the preamble and got the result: "I have found 3 cats that match your description: 1. Luna — Young, Calico in Boston, MA. 2. Ruby — Adult, Exotic Shorthair in Providence, RI. 3. Maggie — Young, Manx in Albany, NY."
 
-The resulting answer was:  ....
+This showed a much better improvement from the previous search as with the filtering and the new preamble the llm was able to only return pets that match the species.
+
+Next I tested the llm out on an example query for dogs: The user has found 5 adult, playful dogs in Boston: 1. Rocky, 2. Jack, 3. Riley, 4. Buster, 5. Moose.
+
+As can be seen, the agent was able to produce a result, but it did not adhere to the formatting rules that I specified in the preamble. Instead it just listed the names. Eventhough it did not follow the formatting rules I put in, it was able to properly use the search method and all the animals returned were the right species and relevant to the query. As seen by the action: Action: search[query="adult playful dog Boston", species="dog", k=5]
+{"tool": "search", "query": "adult playful dog Boston", "results": [{"id": "2006", "name": "Rocky", "species": "Dog", "breed": "Pit Bull Terrier", "age": "Adult", "sex": "Male", "location": "Boston, MA", "score": 0.28732645343031166, "snippet": "Energetic and loyal; loves toys and needs an active home."}, {"id": "2039", "name": "Jack", "species": "Dog", "breed": "Border Collie", "age": "Young", "sex": "Female", "location": "Boston, MA", "score": 0.264071593732683, "snippet": "Smart and energetic; loves to run and learn tricks."}, {"id": "2024", "name": "Riley", "species": "Dog", "breed": "Australian Shepherd", "age": "Young", "sex": "Male", "location": "Boston, MA", "score": 0.2522828621314104, "snippet": "Very smart and active, loves games and mental challenges."}, {"id": "2022", "name": "Buster", "species": "Dog", "breed": "Dalmatian", "age": "Adult", "sex": "Male", "location": "Syracuse, NY", "score": 0.18809188505815283, "snippet": "Loves to run, very energetic and playful."}, {"id": "2035", "name": "Moose", "species": "Dog", "breed": "Saint Bernard", "age": "Adult", "sex": "Female", "location": "Buffalo, NY", "score": 0.17636455964081585, "snippet": "Gentle giant; calm and loves children."}
+
+After further refining the output rules I was able to obtain an answer of: I have found 2 dogs that match your description: 1. Rocky — Adult, Pit Bull Terrier in Boston, MA. 2. Jack — Young, Border Collie in Boston, MA. 
+
+Once the agent was able to produce satisfactory answers to the example prompt I provided it, I additionally prompted the agent with more complex and query such as "I'm thinking of getting a cat that will like to go on long walks with me but also cuddle with me and watch TV." 
+
+The resulting answer was: Bella — Senior, Maine Coon in Somerville, MA. Bella is a gentle senior cat who loves brushing and quiet spaces. She is also a cuddly cat that enjoys watching TV.
+
+The result was a decent match to the query and got the cuddly part correct. However, I did notice it hallucinated some attributes to match the query when that information did not appear in the actual data. For example the output says that Bella enjoys watching TV, but this is not mentioned at all in her description: 
 
 ## Further work and improvements
-I hope to improve this project by connecting the agent to the real Rescue Group Adoptable Pets API rather than using the toy corpus. I also hope, once I get access to the API, I can display images or links that are connected to the pets so that users can go directly to adoption pages and see if the suggested pets are right for them to adopt them. 
+As can be seen in the results, the agent is far from perfect and has a long way to go to become a useful tool. It messes up a lot and does not always adhere to the rules and tools that I set for it. I hope to further improve the agent by better prompt engineering the llm to produce higher quality and more consistent results.
 
-Additionally, I want to refine the filtering and search methods to be more specific to pet information. As of now the TF-IDF and cosine simalrity are more tailored to documents of information like wikipedia and thus are more suited for tasks such as Question and Answering. I hope to refine these methods and research more relevant algorithms that pretain to the task that this agent is performing. TF-IDF is very sensitive to noisy and short descriptions which is not ideal when applied to pet adoption information as they are usually very short descriptions. Additionally, as mentioned before it fails at semantic simlarities and can only perform token overlap, thus it would greatly improve the agent to find a more relevant search method.
+I also hope to improve this project by connecting the agent to the real Rescue Group Adoptable Pets API rather than using the toy corpus. I also hope, once I get access to the API, I can display images or links that are connected to the pets so that users can go directly to adoption pages and see if the suggested pets are right for them to adopt them. 
+
+Additionally, I want to refine the filtering and search methods to be more specific to pet information. For filtering, right now my search method only supports filtering by species. However, I want to also add filtering by location and other attributes, but this proved to be too finicky to confidently implement in the given amount of time. For searching, as of now the TF-IDF and cosine simalrity are more tailored to documents of information like wikipedia and thus are more suited for tasks such as Question and Answering. I hope to refine these methods and research more relevant algorithms that pretain to the task that this agent is performing. TF-IDF is very sensitive to noisy and short descriptions which is not ideal when applied to pet adoption information as they are usually very short descriptions. Additionally, as mentioned before it fails at semantic simlarities and can only perform token overlap, thus it would greatly improve the agent to find a more relevant search method. 
 
 Further improvements can be made to efficiency. The agent takes a long time to produce an answer, thus, I hope to speed up the process and further enhance the algorithms and methodologies to improve the time it takes to produce answers to user queries. 
 
@@ -108,4 +123,4 @@ Rescue Group API: https://rescuegroups.org/services/adoptable-pet-data-api/
 
 ## Run the code
 
-To run the code you can use the provided jupiter notebook. If you want, you can play around with the prompt in the last cell to test out the agent and see what it responds.
+To run the code you can use the provided jupiter notebook. If you want, you can play around with the prompt in the last cell to test out the agent and see what it responds. 
