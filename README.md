@@ -102,6 +102,22 @@ The resulting answer was: Bella — Senior, Maine Coon in Somerville, MA. Bella 
 
 The result was a decent match to the query and got the cuddly part correct. However, I did notice it hallucinated some attributes to match the query when that information did not appear in the actual data. For example the output says that Bella enjoys watching TV, but this is not mentioned at all in her description: 
 
+"id": "2003",
+      "type": "animals",
+      "attributes": {
+        "animalName": "Bella",
+        "animalSpecies": "Cat",
+        "animalBreed": "Maine Coon",
+        "animalAgeString": "Senior",
+        "animalSex": "Female",
+        "animalDescriptionPlain": "Gentle senior cat who loves brushing and quiet spaces.",
+        "animalLocation": "Somerville, MA",
+        "animalPictures": [
+            { "urlSecureFullsize": "https://example.com/bella.jpg" }
+        ]
+
+This continued to be a persistent issue when testing out the agent that I hope to address in the future.
+
 ## Further work and improvements
 As can be seen in the results, the agent is far from perfect and has a long way to go to become a useful tool. It messes up a lot and does not always adhere to the rules and tools that I set for it. I hope to further improve the agent by better prompt engineering the llm to produce higher quality and more consistent results.
 
