@@ -70,7 +70,9 @@ Model: Qwen2.5-0.5B-Instrcut
 
 Decoding: temperature=0.2, do_sample=True
 
-Max tokens: 160
+Max tokens: 300
+
+This parameters were used because....TODO....
 
 #### Evaluation Metrics
 Results where judged qualitatively by how well it was able to respect the species/age/locations, whether the descriptions match and how well they matched, and whether the agent followed the formatting that I specified.
@@ -130,7 +132,7 @@ Further improvements can be made to efficiency. The agent takes a long time to p
 Finally, as of now, the command line interactions are very impractical and not ideal. A future enhancement would be to add a user interface to allow people to interact with the agent in a more practical and convinenet way.
 
 ## Conclusion
-
+In this project, I developed an AI agent designed to assist prospective pet adopters by matching their preferences with available animals. Through natural-language query parsing, filtering, and TF-IDF-based retrieval, the agent can provide personalized recommendations, even with a limited toy corpus. While initial results are promising, there are clear opportunities for improvement, including integrating real-world adoption data, refining search and filtering methods, and enhancing response consistency. Overall, this work demonstrates the potential of combining AI and information retrieval to simplify and personalize the pet adoption process.
 
 ## References
 Code template: https://github.com/VirtuosoResearch/CS4100_project 
