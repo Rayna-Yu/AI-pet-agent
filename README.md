@@ -120,6 +120,8 @@ The result was a decent match to the query and got the cuddly part correct. Howe
 
 This continued to be a persistent issue when testing out the agent that I hope to address in the future.
 
+Additionally, the key attributes were not always extracted. For example when asking for a playful young dog in Boston the action would be: Action: search[query="young dog Boston", species="dog", k=3] instead of Action: search[query="playful young dog Boston", species="dog", k=3]. This is evidence that I will need to further refine the way the agent processes the query to extract the relevent key words and attributes. However, even though it is not perfect in finding relevent attributes, it still is able to return decent results.
+
 ## Further work and improvements
 As can be seen in the results, the agent is far from perfect and has a long way to go to become a useful tool. It messes up a lot and does not always adhere to the rules and tools that I set for it. I hope to further improve the agent by better prompt engineering the llm to produce higher quality and more consistent results.
 
