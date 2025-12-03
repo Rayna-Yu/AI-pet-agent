@@ -47,13 +47,13 @@ def parse_action(line: str) -> Optional[Tuple[str, Dict[str, Any]]]:
     line = line.strip()
     if not line.startswith("Action:"):
         return None
-    
+
     rest = line[len("Action:"):].strip()
 
     match = re.match(r"^([a-zA-Z_][a-zA-Z0-9_]*)\s*\[(.*)\]\s*$", rest)
     if not match:
         return None
-    
+
     name, argstr = match.groups()
     args = split_args(argstr)
     return name, args
@@ -74,40 +74,53 @@ def format_history(trajectory: List[Dict[str, str]]) -> str:
 
 # 3. We will build the prompt shown to the model for the next step
 SYSTEM_PREAMBLE = textwrap.dedent("""\
-    You are a helpful ReAct agent that helps users find adoptable pets.
-    You can use tools to search for pets based on their description, breed, age, species, location, and other attributes.
-    Prioritize returning accurate and relevant information to the user.
-                                  
-    Return your final answer in the formst of a list with the following fields for each pet:
-    - name
-    - species
-    - breed
-    - age
-    - location
-    - personality traits
-    - adoption link
+You are a helpful ReAct agent that helps users find adoptable pets.
+You can use tools to search for pets based on their description, breed, age, species, location, and other attributes.
 
-    Available tools:
-    - search[query="<text>", k=<int>]  # searches the pet data base and returns the top-k matching animals
-    To finish, use: finish[answer="<final answer>"]
+Available tools:
+- search[query="<text>", species="<species>", k=<int>]  # searches the pet database and returns the top-k matching animals
+  Default to k=3. Do not adjust unless absolutely necessary.
+To finish, use: finish[answer="<final answer>"]
 
-    Follow the exact step format:
-    Thought: <your reasoning>
-    Action: <one of the tool calls above, or finish[...]>
-    
-    Example:
-    User Question: "I want a calico cat who is young and cuddly"
-    Thought: I should identify the species, breed, age, location, and personality preferences from the query before searching.
-    Action: search[query="calico cat young cuddly", k=3]
-    Observation: {"results":[...]}
+Follow the exact step format:
+Thought: <your reasoning>
+Action: <one of the tool calls above, or finish[...]>
+
+Do not repeat a search with the exact same query if it has already been performed in this session.
+
+### QUERY RULES
+- Include **all descriptive words** from the user query in your search including personality traits.
+  All information must go inside the `query` parameter. 
+  Do **NOT** add extra parameters to the search tools
+  For example, "young cuddly calico cat Boston" must appear exactly in the search query.
+- Always enforce species using the species parameter.
+- Example search call:
+  search[query="young cuddly calico Boston", species="cat", k=3]
+
+### FINAL ANSWER FORMAT
+- Only produce the final answer inside finish[answer="..."]
+- Format each result using only attributes returned by the search results. 
+- Number the results:
+  I have found <N> cats that match your description:  1. <name> — <age>, <breed> in <location>. <description> 2. <name> — <age>, <breed> in <location>. <description>
+- Only use attributes returned by the search results. Do NOT infer missing data.
+- Never merge animals into a single sentence or claim shared traits unless explicitly true.
+
+IMPORTANT: Do not output the final answer before calling finish[...]. Only output your reasoning and Action steps before that.
 """).strip()
 
+
 def make_prompt(user_query: str, trajectory: List[Dict[str, str]]) -> str:
+    """
+    Build a prompt for the LLM including user query, history, and instructions.
+    Ensures all descriptive words from the user query are preserved in the search query.
+    """
     history_block = format_history(trajectory)
-    return (
+
+    prompt = (
         f"{SYSTEM_PREAMBLE}\n\n"
         f"User Question: {user_query}\n\n"
         f"{history_block}\n"
         f"Next step:\n"
         f"Thought:"
     )
+    return prompt

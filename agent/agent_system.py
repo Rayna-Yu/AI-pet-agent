@@ -4,10 +4,6 @@ import json, math, re, textwrap, random, os, sys
 import math
 from collections import Counter, defaultdict
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(current_dir)
-from prompting_techniques import make_prompt, parse_action
-
 @dataclass
 class Step:
     thought: str
@@ -16,7 +12,7 @@ class Step:
 
 @dataclass
 class AgentConfig:
-    max_steps: int = 6
+    max_steps: int = 3
     allow_tools: Tuple[str, ...] = ("search",)
     verbose: bool = True
 
@@ -40,8 +36,9 @@ class ReActAgent:
             t_match = re.search(r"Thought:\s*(.*)", out)
             a_match = re.search(r"Action:\s*(.*)", out)
             thought = t_match.group(1).strip() if t_match else "(no thought)"
-            action_line = a_match.group(1).strip() if a_match else "finish[answer=\"(no action)\"]"
-            # action_line = "Action: " + action_line
+            action_line = a_match.group(0).strip() if a_match else 'Action: finish[answer="(no action)"]'
+
+            #action_line = "Action: " + action_line
 
 
             # 3. Parse the action of the action line using the parse_action function
@@ -76,7 +73,7 @@ class ReActAgent:
         # Build final answer from last finish action if present
         final_answer = None
         for s in reversed(self.trajectory):
-            if s.action.startswith("finish["):
+            if "finish[" in s.action:
                 m = re.search(r'answer=["\'](.*?)["\']', s.action)
                 if m:
                     final_answer = m.group(1)

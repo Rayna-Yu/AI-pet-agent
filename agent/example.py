@@ -4,7 +4,7 @@ from agent_system import ReActAgent
 
 agent = ReActAgent(llm=hf_llm, tools=TOOLS, config=None)
 
-result = agent.run("I want a calico kitten who loves to cuddle that I can get near Boston.")
+result = agent.run("I'm looking for a friendly dog in the Boston area.")
 
 # Inspect the final answer and trajectory
 print("Final answer:", result["final_answer"])

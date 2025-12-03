@@ -47,8 +47,7 @@ def normalize_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
 
     return normalized
 
-# Load your file here
-with open("agent/toy_corpus.json", "r") as f:
+with open("/content/toy_corpus.json", "r") as f:
     raw_json = json.load(f)
 raw_list = raw_json["data"]
 
@@ -73,7 +72,7 @@ def compute_tf(tokens: List[str]) -> Dict[str, float]:
         counts[token] += 1
 
     length = max(1, len(tokens))
-    
+
     return {token: counts[token] / length for token in counts}
 
 # Compute the document frequency across corpus: how many docs does a word appear?
@@ -87,7 +86,7 @@ def compute_df(doc_tokens: List[List[str]]) -> Dict[str, float]:
 # Compute the inverse document frequency (higher for rarer terms), in which we use a smoothed variant
 DF = compute_df(DOC_TOKENS)
 N_DOC = len(DOC_TOKENS)
-IDF = {t: math.log((N_DOC + 1) / (DF[t] + 0.5)) + 1 for t in VOCAB} 
+IDF = {t: math.log((N_DOC + 1) / (DF[t] + 0.5)) + 1 for t in VOCAB}
 
 
 # Compute TF-IDF vectors for each document, which is the product between
@@ -112,21 +111,28 @@ def cosine(a: Dict[str, float], b: Dict[str, float]) -> float:
 
 
 # Implement a search method based on the cosine similarity, which finds the documents with the highest similarity scores as the top-k search results.
-def search_pets(query: str, k: int = 3) -> List[Dict[str, Any]]:
+def search_pets(query: str, k: int = 3, species: Optional[str] = None) -> List[Dict[str, Any]]:
     qvec = tfidf_vector(tokenize(query))
     scored = [(cosine(qvec, v), i) for i, v in enumerate(DOC_VECS)]
     scored.sort(reverse=True)
-    
+
+    filtered = []
+    for score, idx in scored:
+        d = CORPUS[idx]
+        if species and d["species"].lower() != species.lower():
+            continue
+        filtered.append((score, idx))
+
     results = []
-    for score, idx in scored[:k]:
+    for score, idx in filtered[:k]:
         d = CORPUS[idx].copy()
         d["score"] = float(score)
         results.append(d)
     return results
 
 # Integrate the search method as a tool
-def tool_search(query: str, k: int = 3) -> Dict[str, Any]:
-    hits = search_pets(query, k=k)
+def tool_search(query: str, k: int = 3, species: Optional[str] = None) -> Dict[str, Any]:
+    hits = search_pets(query, k=k, species=species)
     return {
         "tool": "search",
         "query": query,
@@ -148,7 +154,7 @@ def tool_search(query: str, k: int = 3) -> Dict[str, Any]:
 
 TOOLS = {
     "search": {
-        "schema": {"query": "str", "k": "int? (default=3)"},
+        "schema": {"query": "str", "k": "int? (default=3)", "species": "str?"},
         "fn": tool_search
     },
     "finish": {

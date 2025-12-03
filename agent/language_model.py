@@ -1,10 +1,10 @@
 import re, torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, GenerationConfig
 
-MODEL_NAME   = "Qwen/Qwen2.5-0.5B-Instruct"    
-LOAD_8BIT    = False                           
+MODEL_NAME   = "Qwen/Qwen2.5-0.5B-Instruct"
+LOAD_8BIT    = False
 DTYPE        = torch.bfloat16 if torch.cuda.is_available() else torch.float32
-MAX_NEW_TOKENS = 160
+MAX_NEW_TOKENS = 300
 GENERATION_KWARGS = {}
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
@@ -20,7 +20,7 @@ model = AutoModelForCausalLM.from_pretrained(
 
 gen_cfg = GenerationConfig(
             max_new_tokens=MAX_NEW_TOKENS,
-            temperature=GENERATION_KWARGS.get("temperature", 0.3),
+            temperature=GENERATION_KWARGS.get("temperature", 0.1),
             do_sample=GENERATION_KWARGS.get("do_sample", True)
         )
 
@@ -52,7 +52,7 @@ def _postprocess_to_two_lines(text: str) -> str:
 
     # Fallbacks if the model didn’t comply perfectly
     if thought is None:
-        thought = "I should search for key facts related to the question."
+        thought = "I should search for attributes described related to the requested animal."
     if action is None:
         action = 'search[query="(auto) refine the user question", k=3]'
 
@@ -74,7 +74,7 @@ def hf_llm(prompt: str) -> str:
     )
     full_prompt = prompt + format_guard
 
-    inputs = tokenizer(full_prompt, return_tensors="pt")
+    inputs = tokenizer(full_prompt, return_tensors="pt").to(model.device)
     with torch.no_grad():
         output_ids = model.generate(**inputs, generation_config = gen_cfg)
 
