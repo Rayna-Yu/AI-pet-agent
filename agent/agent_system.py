@@ -3,6 +3,7 @@ from typing import Callable, Dict, List, Tuple, Optional, Any
 import json, math, re, textwrap, random, os, sys
 import math
 from collections import Counter, defaultdict
+from prompting_techniques import make_prompt, parse_action
 
 @dataclass
 class Step:
