@@ -72,10 +72,14 @@ Decoding: temperature=0.1, do_sample=True
 
 Max tokens: 300
 
-This parameters were used because....TODO....
+I used a temperature of 0.1, because ....
+
+I used a do_sample because ....
+
+I used max tokens because ....
 
 #### Evaluation Metrics
-Results where judged qualitatively by how well it was able to respect the species/age/locations, whether the descriptions match and how well they matched, and whether the agent followed the formatting that I specified.
+Results where judged qualitatively by how well it was able to respect the species/age/locations, whether the descriptions match and how well they matched, and whether the agent followed the formatting that I specified. Additionally, I evaluated the agent on how well it was able to use the tools to filter for the specific species. For example, if a user wants a cat, the agent only returns cats.
 
 ## Results
 
@@ -122,8 +126,10 @@ This continued to be a persistent issue when testing out the agent that I hope t
 
 Additionally, the key attributes were not always extracted. For example when asking for a playful young dog in Boston the action would be: Action: search[query="young dog Boston", species="dog", k=3] instead of Action: search[query="playful young dog Boston", species="dog", k=3]. This is evidence that I will need to further refine the way the agent processes the query to extract the relevent key words and attributes. However, even though it is not perfect in finding relevent attributes, it still is able to return decent results.
 
+Finally, I also notices that as the queries become more complex the agent started adding random parameters to the search method that do not exist and I did not specify. More specifically, the agent often added the parameter of location which caused errors thus making the agent loop until the max steps are reached and return no final answer. 
+
 ## Further work and improvements
-As can be seen in the results, the agent is far from perfect and has a long way to go to become a useful tool. It messes up a lot and does not always adhere to the rules and tools that I set for it. I hope to further improve the agent by better prompt engineering the llm to produce higher quality and more consistent results.
+As can be seen in the results, the agent is far from perfect and has a long way to go to become a useful tool. It messes up a lot and does not always adhere to the rules and tools that I set for it. I hope to further improve the agent by better prompt engineering the llm to produce higher quality and more consistent results and adding guard rails to prevent the agent from adding parameters to the search method.
 
 I also hope to improve this project by connecting the agent to the real Rescue Group Adoptable Pets API rather than using the toy corpus. I also hope, once I get access to the API, I can display images or links that are connected to the pets so that users can go directly to adoption pages and see if the suggested pets are right for them to adopt them. 
 
