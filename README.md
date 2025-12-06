@@ -72,11 +72,11 @@ Decoding: temperature=0.1, do_sample=True
 
 Max tokens: 300
 
-I used a temperature of 0.1, because ....
+I used a temperature of 0.1, because lower temperatures means reduced randomness in the model's output. This makes the generation of recommendations more deterministic and focused.
 
-I used a do_sample because ....
+I used a do_sample because it prevents the model from defaulting to purely greedy decoding. This allows the model to consider multiple likely tokens while still remaining controlled. This can yield slightly more natural responses more similar to talking with a real agent.
 
-I used max tokens because ....
+I used max tokens because it was a reasonable upper boudn that ensured the model had enough space to produce actual coherent and accurate responses without cuttin off the inputs. I found while playing around with the model that a max token of 150 sometimes caused the model to cut itself off, thus I increased it to 300. This makes sure that the generation is efficient while preventing overly long or irrelevent text.
 
 #### Evaluation Metrics
 Results where judged qualitatively by how well it was able to respect the species/age/locations, whether the descriptions match and how well they matched, and whether the agent followed the formatting that I specified. Additionally, I evaluated the agent on how well it was able to use the tools to filter for the specific species. For example, if a user wants a cat, the agent only returns cats.
